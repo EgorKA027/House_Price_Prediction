@@ -455,6 +455,7 @@ def get_repair(message):
         return
     
     user_responses.append(user_response)
+    print(user_responses)
 
     # После получения списка переходим к созданию DataFrame
     data = pd.DataFrame()
@@ -469,16 +470,18 @@ def get_repair(message):
     data['Количество этажей'] = [user_responses[8]]
     data['Ремонт'] = [user_responses[9]]
 
+    
     # Вызываем функцию для предсказания
     predicted_values = make_prediction(data)
-
     
-
     # Форматирование числа с разделением пробелами
     predicted_values = ', '.join(['{:,.0f}'.format(value).replace(',', ' ') for value in predicted_values])
-
+    print(predicted_values)
+    
     # Отправка предсказания
     bot.send_message(message.chat.id, f"Цена квартиры по заданным параметрам: {predicted_values}")
+
+
 
     # Рекомендации 
     ans = recommendations(df, user_responses[3], user_responses[5])
