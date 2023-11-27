@@ -1,0 +1,24 @@
+artifact_path: linear_regression_model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.2.2
+mlflow_version: 2.7.1
+model_uuid: c8e10a96f90a43ada198d694f0ba9958
+run_id: 606bcf91697c4fcc8ab0f5aa51cf477e
+signature:
+  inputs: '[{"type": "double", "name": "const"}, {"type": "double", "name": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e
+    \u043a\u043e\u043c\u043d\u0430\u0442"}, {"type": "double", "name": "\u041f\u043b\u043e\u0449\u0430\u0434\u044c"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2023-11-20 23:20:36.340098'
